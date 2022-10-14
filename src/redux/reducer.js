@@ -1,5 +1,11 @@
-import {ADD_TO_CART} from './constant'
+import { ADD_TO_CART } from "./constant";
 export const cartData = (data = [], action) => {
-   console.log("Reducer call",action)
-   return 'abc'
-}
+  switch (action.type) {
+    case ADD_TO_CART:
+      console.log("Reducer call", action);
+      return "abc";
+
+    default:
+      return "no action mach";
+  }
+};

@@ -1,4 +1,8 @@
 import React from "react";
+import { BsCart3 } from "react-icons/bs";
+import { HiSearch } from "react-icons/hi";
+import { AiOutlineHeart } from "react-icons/ai";
+import { BiUserCircle } from "react-icons/bi";
 
 function Navber() {
   return (
@@ -6,40 +10,63 @@ function Navber() {
       <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span class="ml-3 text-xl">Tailblocks</span>
+            <span class="ml-3 text-xl cursor-pointer">EZ Mart</span>
           </a>
-          <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-gray-900">First Link</a>
-            <a class="mr-5 hover:text-gray-900">Second Link</a>
-            <a class="mr-5 hover:text-gray-900">Third Link</a>
-            <a class="mr-5 hover:text-gray-900">Fourth Link</a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900 text-xl cursor-pointer">Home</a>
+            <a class="mr-5 hover:text-gray-900 text-xl cursor-pointer">
+              product
+            </a>
+            <a class="mr-5 hover:text-gray-900 text-xl cursor-pointer">About</a>
+            <a class="mr-5 hover:text-gray-900 text-xl cursor-pointer">
+              contact
+            </a>
           </nav>
-          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-            Button
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+
+          <form class="flex items-center">
+            <label for="simple-search" class="sr-only">
+              Search
+            </label>
+            <div class="relative w-full">
+              <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                <HiSearch size={25} />
+              </div>
+              <input
+                type="text"
+                id="simple-search"
+                class="bg-gray-50 border border-gray-300 text-gray-900 font-semibold text-sm rounded-full block w-full pl-10 p-2.5 "
+                placeholder="Search"
+                required
+              />
+            </div>
+          </form>
+
+          <nav class="contents">
+            <ul class="ml-2 xl:w-48 flex items-center justify-end">
+              <li class="ml-1 lg:ml-4 relative inline-block">
+                <a class="" href="">
+                  <BiUserCircle size={30} />
+                </a>
+              </li>
+              <li class="ml-1 lg:ml-4 relative inline-block">
+                <a class="" href="">
+                  <div class="absolute -top-2 right-5  z-10 bg-yellow-400 text-xs font-bold px-1.5 py-0.5 rounded-full">
+                    30
+                  </div>
+                  <AiOutlineHeart size={30} />
+                </a>
+              </li>
+
+              <li class="ml-1 lg:ml-4 relative inline-block">
+                <a class="" href="">
+                  <div class="absolute -top-2 right-5  z-10 bg-yellow-400 text-xs font-bold px-1.5 py-0.5 rounded-full">
+                    30
+                  </div>
+                  <BsCart3 size={30} />
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </header>
     </div>
