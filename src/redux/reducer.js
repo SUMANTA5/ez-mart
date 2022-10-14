@@ -3,9 +3,9 @@ export const cartData = (data = [], action) => {
   switch (action.type) {
     case ADD_TO_CART:
       console.log("Reducer call", action);
-      return "abc";
+      return [action.data, ...data];
 
     default:
-      return "no action mach";
+      return data;
   }
 };
