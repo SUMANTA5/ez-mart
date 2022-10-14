@@ -1,8 +1,8 @@
 import React from "react";
-import { BsCart3 } from "react-icons/bs";
+import { FaShoppingCart } from "react-icons/fa";
 import { HiSearch } from "react-icons/hi";
-import { AiOutlineHeart } from "react-icons/ai";
-import { BiUserCircle } from "react-icons/bi";
+import { FaHeart } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import {useSelector} from 'react-redux'
 
 function Navber() {
@@ -33,7 +33,7 @@ function Navber() {
               Search
             </label>
             <div className="relative w-full">
-              <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none ">
                 <HiSearch size={25} />
               </div>
               <input
@@ -50,7 +50,9 @@ function Navber() {
             <ul className="ml-2 xl:w-48 flex items-center justify-end">
               <li className="ml-1 lg:ml-4 relative inline-block">
                 <a className="" href="">
-                  <BiUserCircle size={30} />
+                <div className=" hover:text-yellow-400">
+                  <FaUserCircle size={30} />
+                  </div>
                 </a>
               </li>
               <li className="ml-1 lg:ml-4 relative inline-block">
@@ -58,7 +60,9 @@ function Navber() {
                   <div className="absolute -top-2 right-5  z-10 bg-yellow-400 text-xs font-bold px-1.5 py-0.5 rounded-full">
                     30
                   </div>
-                  <AiOutlineHeart size={30} />
+                  <div className=" hover:text-red-700">
+                  <FaHeart size={30} />
+                  </div>
                 </a>
               </li>
 
@@ -67,7 +71,9 @@ function Navber() {
                   <div className="absolute -top-2 right-5  z-10 bg-yellow-400 text-xs font-bold px-1.5 py-0.5 rounded-full">
                     {result.length}
                   </div>
-                  <BsCart3 size={30} />
+                  <div className=" hover:text-yellow-400">
+                  <FaShoppingCart size={30} />
+                  </div>
                 </a>
               </li>
             </ul>
