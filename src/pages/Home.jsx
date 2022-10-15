@@ -15,16 +15,19 @@ const Home = () => {
 
   return (
     <div>
-      <div>
+      {/* <div>
         <button onClick={() => dispatch(emptyCart())}>Empty cart</button>
-      </div>
+      </div> */}
 
       <div>
         <section className="text-gray-600 body-font">
-          <div className="container px-5 py-24 mx-auto">
+          <div className="container px-5 py-20 mx-auto">
             <div className="flex flex-wrap -m-12 justify-center items-center">
               {data.map((item) => (
-                <div key={item.id} className="lg:w-1/5 md:w-1/2 p-6 w-full m-4 bg-white rounded-lg  dark:bg-gray-400 dark:border-gray-300">
+                <div
+                  key={item.id}
+                  className="lg:w-1/5 md:w-1/2 p-6 w-full m-4 bg-white rounded-lg  dark:bg-gray-400 dark:border-gray-300"
+                >
                   <a className="block relative h-48 rounded overflow-hidden">
                     <img
                       className="object-fill object-center w-full h-full block"
