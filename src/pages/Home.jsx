@@ -1,5 +1,5 @@
 import React from "react";
-import { addToCart, removeFromCart } from "../redux/action";
+import { addToCart, removeFromCart, emptyCart } from "../redux/action";
 import { useDispatch } from "react-redux";
 
 const Home = () => {
@@ -22,7 +22,7 @@ const Home = () => {
         </button>
       </div>
       <div>
-        <button onClick={() => dispatch(addToCart(product))}>
+        <button onClick={() => dispatch(emptyCart())}>
           Empty cart
         </button>
       </div>
