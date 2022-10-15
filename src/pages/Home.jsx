@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { addToCart, removeFromCart, emptyCart } from "../redux/action";
 import { useDispatch } from "react-redux";
 import { productList } from "../redux/productAction";
@@ -19,20 +19,14 @@ const Home = () => {
     category: "men's clothing",
     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
   };
+  useEffect(() => {
+    dispatch(productList());
+  }, []);
+
   return (
     <div>
-      <button onClick={() => dispatch(addToCart(product))}>Add to cart</button>
-      <div>
-        <button onClick={() => dispatch(removeFromCart(product.id))}>
-          Remove frome cart
-        </button>
-      </div>
       <div>
         <button onClick={() => dispatch(emptyCart())}>Empty cart</button>
-      </div>
-
-      <div>
-        <button onClick={() => dispatch(productList())}>get produc List</button>
       </div>
 
       <div>
@@ -40,11 +34,11 @@ const Home = () => {
           <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap -m-4">
               {data.map((item) => (
-                <div class="p-4 md:w-1/3">
+                <div key={item.id} class="p-4 md:w-1/3">
                   <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                       <img
-                        class="p-8 rounded-t-lg"
+                        class="p-8 rounded-t-sm"
                         src={item.image}
                         alt="product image"
                       />
@@ -115,7 +109,13 @@ const Home = () => {
                           ${item.price}
                         </span>
                         <butto
-                          onClick={() => dispatch(addToCart(product))}
+                          onClick={() => dispatch(removeFromCart(item.id))}
+                          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer"
+                        >
+                          Remove
+                        </butto>
+                        <butto
+                          onClick={() => dispatch(addToCart(item))}
                           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer"
                         >
                           Add to cart
