@@ -1,5 +1,5 @@
 import React from "react";
-import { addToCart } from "../redux/action";
+import { addToCart, removeFromCart } from "../redux/action";
 import { useDispatch } from "react-redux";
 
 const Home = () => {
@@ -16,6 +16,16 @@ const Home = () => {
   return (
     <div>
       <button onClick={() => dispatch(addToCart(product))}>Add to cart</button>
+      <div>
+        <button onClick={() => dispatch(removeFromCart(product.id))}>
+          Remove frome cart
+        </button>
+      </div>
+      <div>
+        <button onClick={() => dispatch(addToCart(product))}>
+          Empty cart
+        </button>
+      </div>
     </div>
   );
 };
