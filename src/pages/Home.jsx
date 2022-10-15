@@ -1,9 +1,15 @@
 import React from "react";
 import { addToCart, removeFromCart, emptyCart } from "../redux/action";
 import { useDispatch } from "react-redux";
+import { productList } from "../redux/productAction";
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const dispatch = useDispatch();
+
+  const data = useSelector((state) => state.productData);
+  console.log("redux data in Home", data);
+
   const product = {
     id: 1,
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -22,9 +28,11 @@ const Home = () => {
         </button>
       </div>
       <div>
-        <button onClick={() => dispatch(emptyCart())}>
-          Empty cart
-        </button>
+        <button onClick={() => dispatch(emptyCart())}>Empty cart</button>
+      </div>
+
+      <div>
+        <button onClick={() => dispatch(productList())}>get produc List</button>
       </div>
     </div>
   );
