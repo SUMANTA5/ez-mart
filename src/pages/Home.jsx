@@ -20,47 +20,46 @@ const Home = () => {
 
       <div>
         <section class="text-gray-600 body-font">
-          <div class="container px-2 py-1 mx-auto ">
-            <div class="flex flex-wrap ml-20">
+          <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap -m-10 justify-center items-center">
               {data.map((item) => (
-                <div key={item.id} class="p-4 md:w-1/3">
-                  <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                      <img
-                        class="p-3 rounded-t-sm object-fill h-48 w-96"
-                        src={item.image}
-                        alt="product image"
-                      />
-                    </a>
-                    <div class="px-5 pb-5">
-                      <a href="#">
-                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                          {item.title.slice(0, 20)}
-                        </h5>
-                      </a>
-                      <div class="flex items-center mt-2.5 mb-5">
-                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
+                <div class="lg:w-1/5 md:w-1/2 p-6 w-full m-4 bg-white rounded-lg  dark:bg-gray-400 dark:border-gray-300">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img
+                      class="object-fill object-center w-full h-full block"
+                      src={item.image}
+                      alt="product image"
+                    />
+                  </a>
+                  <div class="mt-8">
+                  
+                    <h3 class="text-gray-900 text-xs tracking-widest title-font mb-1">
+                      {item.category}
+                    </h3>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:text-blue-800 ml-3">
                           {item.rating.rate}
                         </span>
-                      </div>
-                      <div class="flex justify-between items-center">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">
+                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 ">
+                          {item.title.slice(0, 20)}
+                        </h5>
+                    
+                        <span class="text-3xl font-bold text-gray-900 ">
                           ${item.price}
                         </span>
-                        <butto
-                          onClick={() => dispatch(removeFromCart(item.id))}
-                          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-3 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer"
-                        >
-                          Remove
-                        </butto>
-                        <butto
-                          onClick={() => dispatch(addToCart(item))}
-                          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-3 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer"
-                        >
-                          Add to cart
-                        </butto>
-                      </div>
-                    </div>
+                  </div>
+                  <div className="mt-5">
+                  <butto
+                    onClick={() => dispatch(removeFromCart(item.id))}
+                    class="ml-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-3 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer"
+                  >
+                    Remove
+                  </butto>
+                  <butto
+                    onClick={() => dispatch(addToCart(item))}
+                    class="ml-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-3 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer"
+                  >
+                    Add to cart
+                  </butto>
                   </div>
                 </div>
               ))}
