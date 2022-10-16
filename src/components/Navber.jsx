@@ -4,6 +4,7 @@ import { HiSearch } from "react-icons/hi";
 import { FaHeart } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import {useSelector} from 'react-redux'
+import { Link } from "react-router-dom";
 
 function Navber() {
 
@@ -14,9 +15,9 @@ function Navber() {
     <div>
       <header className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <Link to='/' className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <span className="ml-3 text-xl cursor-pointer">EZ Mart</span>
-          </a>
+          </Link>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <a className="mr-5 hover:text-gray-900 text-xl cursor-pointer">Home</a>
             <a className="mr-5 hover:text-gray-900 text-xl cursor-pointer">
@@ -67,14 +68,14 @@ function Navber() {
               </li>
 
               <li className="ml-1 lg:ml-4 relative inline-block">
-                <a className="" href="">
+                <Link className="" to='/cart'>
                   <div className="absolute -top-2 right-5  z-10 bg-yellow-400 text-xs font-bold px-1.5 py-0.5 rounded-full">
                     {result.length}
                   </div>
                   <div className=" hover:text-yellow-400">
                   <FaShoppingCart size={30} />
                   </div>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
