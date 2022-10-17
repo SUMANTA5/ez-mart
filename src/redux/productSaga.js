@@ -9,10 +9,12 @@ function* getProduct() {
 }
 
 function* searchProduct(data) {
-  let result = yield fetch(`https://fakestoreapi.com/products/category/${data.query}`);
+  let result = yield fetch(
+    `https://fakestoreapi.com/products/category/${data.query}`
+  );
   result = yield result.json();
-  console.log('api q', data)
-  yield put({ type: SET_PRODUCT_LIST,data:result });
+  console.log("api q", data);
+  yield put({ type: SET_PRODUCT_LIST, data: result });
 }
 
 function* productSaga() {
