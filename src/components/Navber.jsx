@@ -21,10 +21,10 @@ function Navber() {
             <span className="ml-3 text-xl cursor-pointer">EZ Mart</span>
           </Link>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-5 hover:text-gray-900 text-xl cursor-pointer">Home</a>
-            <a className="mr-5 hover:text-gray-900 text-xl cursor-pointer">
+            <Link to='/' className="mr-5 hover:text-gray-900 text-xl cursor-pointer">Home</Link>
+            <Link to='/product' className="mr-5 hover:text-gray-900 text-xl cursor-pointer">
               product
-            </a>
+            </Link>
             <a className="mr-5 hover:text-gray-900 text-xl cursor-pointer">About</a>
             <a className="mr-5 hover:text-gray-900 text-xl cursor-pointer">
               contact
