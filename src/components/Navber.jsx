@@ -3,13 +3,15 @@ import { FaShoppingCart } from "react-icons/fa";
 import { HiSearch } from "react-icons/hi";
 import { FaHeart } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import { Link } from "react-router-dom";
+import {productSearch} from '../redux/productAction'
 
 function Navber() {
 
   const result = useSelector((state)=>state.cartData)
-  console.log("redux data in nav", result)
+  
+  const dispatch = useDispatch()
 
   return (
     <div>
@@ -39,6 +41,7 @@ function Navber() {
               </div>
               <input
                 type="text"
+                onChange={(event)=> dispatch(productSearch(event.target.value))}
                 id="simple-search"
                 className="bg-gray-50 border border-gray-300 text-gray-900 font-semibold text-sm rounded-full block w-full pl-10 p-2.5 "
                 placeholder="Search"

@@ -3,6 +3,10 @@ import { useSelector } from "react-redux";
 
 const Card = () => {
   const cartData = useSelector((state) => state.cartData);
+  let amount =
+    cartData.length &&
+    cartData.map((item) => item.price).reduce((prev, next) => prev + next);
+
   return (
     <div>
       <section class="text-gray-600 body-font overflow-hidden">
@@ -82,40 +86,39 @@ const Card = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="px-4 py-3">Start</td>
+                    <td class="px-4 py-3">Amount</td>
 
-                    <td class="px-4 py-3 text-lg text-gray-900">Free</td>
-                  </tr>
-                  <tr>
-                    <td class="border-t-2 border-gray-200 px-4 py-3">Pro</td>
-
-                    <td class="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900">
-                      $24
-                    </td>
+                    <td class="px-4 py-3 text-lg text-gray-900">${amount}</td>
                   </tr>
                   <tr>
                     <td class="border-t-2 border-gray-200 px-4 py-3">
-                      Business
+                      Discount
                     </td>
 
                     <td class="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900">
-                      $50
+                      ${amount / 10}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-t-2 border-gray-200 px-4 py-3">Tax</td>
+
+                    <td class="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900">
+                      18%
                     </td>
                   </tr>
                   <tr>
                     <td class="border-t-2 border-b-2 border-gray-200 px-4 py-3">
-                      Exclusive
+                      Total
                     </td>
 
                     <td class="border-t-2 border-b-2 border-gray-200 px-4 py-3 text-lg text-gray-900">
-                      $72
+                      ${amount - amount / 10}
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div class="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
-              
               <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                 Button
               </button>
